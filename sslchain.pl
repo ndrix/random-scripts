@@ -3,7 +3,6 @@ use strict;
 use Net::SSLeay qw(get_https3);
 use Data::Dumper;
 
-
 # verify callback
 sub verify {
     my ($ok, $subj_cert, $issuer_cert, $depth, $errorcode, $arg, $chain) = @_;
@@ -29,8 +28,11 @@ if(defined($cert) && $cert != 0){
     print " ".Net::SSLeay::X509_NAME_ENTRY_get_object($entry)."\n";
     print "---------\n\n";
   }
-  print "\n\n issuer hash and name: ";
+  print "\n\n issuer and serial hash: ";
   print (Net::SSLeay::X509_issuer_and_serial_hash($cert));
+  print "\n\n issuer name hash: ";
+  print (Net::SSLeay::X509_issuer_name_hash($cert));
+
   print "\n\nssl all names: ";
   print Net::SSLeay::X509_get_subjectAltNames($cert);
   print "\n\nserial number: ";
@@ -38,9 +40,6 @@ if(defined($cert) && $cert != 0){
   print "\n\nmd5 fingerprint: ";
   print Net::SSLeay::X509_get_fingerprint($cert, "md5");
   print "\n\n";
-  my $rv = Net::SSLeay::get_verify_results($cert);
-  print $rv;
-
 }
 else {
   print "Could not get cert\n";
