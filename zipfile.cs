@@ -19,7 +19,7 @@ namespace ConsoleApplication
       {
         foreach(ZipArchiveEntry entry in archive.entries)
         {
-          if(entry.Fullname.EndsWith("*.js", StringComparison.OrdinalIgnoreCase)
+          if(entry.Fullname.EndsWith("*.jsp", StringComparison.OrdinalIgnoreCase)
           {
             entry.ExtractToFile(Path.Combine(extractPath, entry.FullName)); // or random name
             // do we remove the file?
