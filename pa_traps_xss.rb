@@ -37,12 +37,12 @@ soap_envelope = <<-SOAP
 			<preventions xmlns:b="http://schemas.datacontract.org/2004/07/Cyvera.Common.Interfaces" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
 				<b:PreventionDetails>
 					<b:Id>0</b:Id>
-					<b:MachineName>AEDXBNB-MHE</b:MachineName>
+					<b:MachineName>VMNAME1</b:MachineName>
 					<b:Message>Exploit attempt was prevented by Traps</b:Message>
 					<b:PreventionKey>116215ce-65e2-4b77-b176-6c0279d12c37</b:PreventionKey>
 					<b:ProcessName>Excel.exe</b:ProcessName>
 					<b:Time>2014-10-15T13:18:56</b:Time>
-					<b:UserName> HELPAG\\hendrickx </b:UserName>
+					<b:UserName> DOM\\mhendrickx </b:UserName>
 					<b:Arguments>"C:\\Users\\Michael\\fake.exe" 
 						&#0000060;script&#0000062;
 							alert("xss");
